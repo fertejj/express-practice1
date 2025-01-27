@@ -3,5 +3,35 @@ GET http://localhost:3000/movies
 
 ### RECUPERAR UNA PELICULA POR ID
 GET http://localhost:3000/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
 ### RECUPERAR TODAS LAS PELICULAS POR GENERO
 GET http://localhost:3000/movies?genre=ACTINO
+
+### CREAR UNA PELICULA
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+
+{
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "duration": 201,
+    "genre": ["Fantasy"],
+    "poster": "https://www.imdb.com/title/tt0167260/mediaviewer/rm4262020096/",
+    "director": "Peter Jackson",
+    "actors": [
+        "Elijah Wood",
+        "Ian McKellen",
+        "Viggo Mortensen",
+        "Orlando Bloom",
+        "Sean Bean"
+    ]
+}
+
+### MODIFICAR UNA PELICULA
+PATCH http://localhost:3000/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "year": 1993
+}
